@@ -2,8 +2,8 @@
 import { useRouter } from 'next/router';
 import { from, gql, useQuery } from '@apollo/client';
 import client from '../../../lib/apolloClient';
-import { GET_POSTS } from '../../../graphql/queries/GET_POSTS';
-import { GET_POST_BY_SLUG } from '../../../graphql/queries/GET_POST_BY_SLUG';
+import { GET_POSTS } from '../../graphql/queries/GET_POSTS';
+import { GET_POST_BY_SLUG } from '../../graphql/queries/GET_POST_BY_SLUG';
 
 
 
