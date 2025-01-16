@@ -3,6 +3,8 @@
 import { useQuery } from '@apollo/client'
 import { GET_HOME_MAIN_VIDEO } from '@/app/graphql/queries/GET_HOME_VIDEOS'
 import { Suspense } from 'react'
+import './style.css';
+
 
 function VideoPlayer({ videoUrl }) {
   return (
