@@ -1,4 +1,4 @@
-// File: /Users/manuelnavarro/roar-headless/app/page.js
+// File: /Users/fachu/roar-headless/app/page.js
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
