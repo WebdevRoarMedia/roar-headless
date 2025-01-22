@@ -19,6 +19,7 @@ console.log(data)
             <h1>
               {post.title}
             </h1>
+            <h2>Hello world</h2>
         </div>
       
       ))}
