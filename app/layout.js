@@ -14,7 +14,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ApolloWrapper>{children}</ApolloWrapper>
+        <ApolloWrapper>
+          <div className="min-h-screen">
+            {children}
+          </div>
+        </ApolloWrapper>
       </body>
     </html>
   );

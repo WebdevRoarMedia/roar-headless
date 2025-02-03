@@ -6,22 +6,25 @@ import { GET_POSTS } from '@/app/graphql/queries/GET_POSTS';
 export default function PostList() {
   const { data, loading, error } = useQuery(GET_POSTS);
 
-  if (loading) return <p>Loading posts...</p>;
-  if (error) return <p>Error loading posts</p>;
-console.log(data)
-  const posts = data?.posts?.nodes || []; // Adjust based on your data structure
+  if (loading) return <div className="p-4">Loading posts...</div>;
+  if (error) return <div className="p-4 text-red-500">Error loading posts: {error.message}</div>;
+
+  const posts = data?.posts?.nodes || [];
 
   return (
-    <div className="post-list">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
       {posts.map((post) => (
-        
-        <div>
-            <h1>
-              {post.title}
-            </h1>
-            <h2>Hello world</h2>
-        </div>
-      
+        <article key={post.id} className="border rounded-lg shadow-sm p-4">
+          {post.featuredImage && (
+            <img 
+              src={post.featuredImage.node.sourceUrl} 
+              alt={post.title}
+              className="w-full h-48 object-cover rounded-t-lg"
+            />
+          )}
+          <h2 className="text-xl font-bold mt-2">{post.title}</h2>
+          <div className="mt-2" dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+        </article>
       ))}
     </div>
   );
